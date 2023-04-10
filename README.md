@@ -57,4 +57,42 @@ history :
 
 
 
+----
+ docker ps
+   19  docker ps -a
+   20  ps -ef | grep docker
+   21  docker -h
+   22  clear
+   23  docker images
+   24  docker run -dt httpd
+   25  docker ps
+   26  docker images
+   27  docker run -h
+   28  docker run --help
+   29  clear
+   30  docker run -it httpd
+   31  clear
+   32  docker run -it --name c1 centos:7
+   33  docker ps
+   34  docker ps -a
+   35  docker restart c1
+   36  docker ps
+   37  docker run -dit --name c2 centos:7
+   38  docker ps
+   39  docker run -dt --name c3 centos:7
+   40  docker ps
+   41  docker attach c3
+   42  docker ps
+   43  docker run -d --name c4 centos:7
+   44  docker ps
+   45  docker ps -a
+   46  docker start c4
+   47  docker ps
+   48  docker run -d --name c5 httpd
+   49  docker ps
+   50  history
+
+
+
+
 ```
