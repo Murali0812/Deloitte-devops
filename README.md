@@ -91,7 +91,28 @@ history :
    48  docker run -d --name c5 httpd
    49  docker ps
    50  history
-
+    docker ps
+   52  docker attach c5
+   53  docker ps
+   54  docker ps -a
+   55  docker start c5
+   56  docker ps
+   57  docker exec -it c5 /bin/bash
+   58  clear
+   59  docker ps
+   60  docker ps -a
+   61  docker create -dt --name c6 centos:7
+   62  docker create -t --name c6 centos:7
+   63  docker ps
+   64  docker ps -a
+   65  clear
+   66  docker ps -a
+   67  docker stop c5
+   68  docker ps -a
+   69  docker rm -f c6
+   70  docker ps -a
+   71  docker run -it --name c7 ubuntu
+   72  docker ps -a
 
 
 
