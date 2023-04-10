@@ -114,6 +114,31 @@ history :
    71  docker run -it --name c7 ubuntu
    72  docker ps -a
 
+docker run -dit --name c1 ubuntu
+  108  docker ps
+  109  docker run -dit --name c2 --hostname ramancontainer ubuntu
+  110  docker ps
+  111  docker exec -it c2 /bin/bash
+  112  docker ps
+  113  docker inspect c1
+  114  ip a
+  115  docker inspect c2
+  116  clear
+  117  docker ps
+  118  docker rm -f `docker ps -aq`
+  119  clear
+  120  docker run -dit --name httpd httpd
+  121  docker ps
+  122  docker inspect httpd
+  123  curl 172.17.0.2
+  124  curl 172.17.0.2:80
+  125  curl 172.31.23.145
+  126  docker ps
+  127  docker run -dit --name c2 -p 81:80 httpd
+  128  docker ps
+  129  docker inspect c2
+  130  curl 172.31.23.145
+  131  curl 172.31.23.145:81
 
 
 ```
