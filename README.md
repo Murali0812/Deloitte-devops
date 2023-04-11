@@ -526,3 +526,39 @@ root@docker:~/app/app3# cat index.html
   423  docker ps
 
 ```
+```
+Dockerhub :
+docker images
+  436  docker push custom1
+  437  docker login
+  438  docker push custom1:latest
+  439  docker tag 083792b245d7 ramann123/myimage:version1
+  440  docker images
+  441  docker push ramann123/myimage:version1
+  442  docker images
+  443  clear
+  444  docker images
+  445  docker rm -f `docker ps -aq`
+  446  docker rmi -f custom3
+  447  docker rmi -f custom2
+  448  docker rmi -f custom1
+  449  docker images
+  450  docker rmi -f ramann123/myimage:version1
+  451  docker images
+  452  clear
+  453  docker images
+  454  docker tag f073857df32c ramann123/myimage:raman'sApp
+
+  455  docker tag f073857df32c ramann123/myimage:ramanapp
+  456  docker images
+  457  docker push ramann123/myimage:ramanapp
+  458  docker images
+  459  docker ps
+  460  docker rmi -f `docker images`
+  461  clear
+  462  docker imageds
+  463  docker images
+  464  docker pull ramann123/myimage:ramanapp
+  465  docker images
+
+```
