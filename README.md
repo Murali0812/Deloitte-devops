@@ -432,3 +432,52 @@ mkdir app1
 
 
 ```
+
+```
+2. Dockerfile :
+
+
+root@docker:~/app/app2# cat Dockerfile
+FROM centos:7
+MAINTAINER  Raman Khanna raman.khanna@TechLanders.com
+RUN mkdir /data
+RUN yum update -y
+RUN yum -y install httpd   php
+RUN echo " TechLanders Solutions Deals in DevOps and Cloud" > /var/www/html/index.html
+EXPOSE 80
+VOLUME  /data
+RUN echo "httpd" >> /root/.bashrc
+CMD ["/bin/bash"]
+
+
+
+
+cd app2
+  374  ls
+  375  vi Dockerfile
+  376  cat Dockerfile
+  377  cd ..
+  378  ls
+  379  cd app1
+  380  ls
+  381  cat Dockerfile
+  382  history
+  383  clear
+  384  cd ..
+  385  ls
+  386  cd app2/
+  387  ls
+  388  cat Dockerfile
+  389  docker build -t custom2 .
+  390  docker ps -a
+  391  docker images
+  392  docker run -dit -P --name c2 custom2
+  393  docker ps
+  394  clear
+  395  cat Dockerfile
+  396  docker exec -it c2 /bin/bash
+
+
+```
+
+
