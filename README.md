@@ -326,4 +326,77 @@ docker exec -it c2 /bin/bash
   290  docker system df
 
 ```
+```
+CUSTOM IMAGES :
 
+custom images using commit method :
+
+
+running container : commit : done some scripting : image-raman
+
+
+docker host : nginx is not there
+old docker container : c1: no nginx    >>   modufied the container (created raman dir and installed nginx ) >>>  custom image 
+
+
+history of inside constainer :
+
+ apt-get install nginx-light
+   14  dpkg -l | grep -i httpd
+   15  dpkg -l | grep -i nginx
+   16  ls
+   17  pwd
+   18  mkdir raman
+   19  ls
+   20  cd raman/
+   21  touch testfile
+   22  ls
+   23  nginx
+   24  dpkg -l | grep -i nginx
+
+
+custom image created : ramanubuntu:v1   >>> newcontainer with updated application
+
+
+history of docker host :
+
+docker images
+  295  clear
+  296  docker rm -f `docker ps -aq`
+  297  clear
+  298  docker images
+  299  clear
+  300  httpd
+  301  dpkg -l | grep -i httpd
+  302  docker run -dit --name c1 ubuntu
+  303  docker ps
+  304  docker images
+  305  clear
+  306  docker ps
+  307  docker exec -it c1 /bin/bash
+  308  clear
+  309  docker ps
+  310  docker ps -a
+  311  docker images
+  312  docker commit -m " added nginx and made some changes to base image" -a " RamanKhanna" c1 ramanubuntu:v1
+  313  docker ps
+  314  docker images
+  315  docker rm -f c1
+  316  docker ps -a
+  317  docker images
+  318  docker rmi -f httpd
+  319  docker rmi -f nginx
+  320  docker rmi -f ubuntu
+  321  docker ps
+  322  docker images
+  323  clear
+  324  docker run -dit --name customapp ramanubuntu:v1
+  325  docker ps
+  326  docker exec -it customapp
+  327  docker exec -it customapp /bin/bash
+  328  docker images
+  329  docker image history tamanubuntu:v1
+  330  docker image history ramanubuntu:v1
+  331  docker events
+
+```
