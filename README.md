@@ -210,4 +210,120 @@ Docker network and port mapping :
 
 ```
 
+```
+
+DOCKER VOLUMES AND TROUBLESHOOTING :
+docker exec -it c2 /bin/bash
+  182  docker ps
+  183  docker ps -a
+  184  'docker images
+
+  185  clear
+  186  docker ps
+  187  cd /var/lib
+  188  ls
+  189  cd ..
+  190  ls
+  191  cd lib
+  192  ls
+  193  cd conainerd
+  194  cd containerd
+  195  l
+  196  cd ..
+  197  ls
+  198  cd docker
+  199  ls
+  200  cd network/
+  201  ls
+  202  cd files
+  203  ls
+  204  cd ..
+  205  ls
+  206  cd ..
+  207  ls
+  208  cd image
+  209  ls
+  210  cd overla2
+  211  cd overlay2
+  212  ls
+  213  ca repositories.json
+  214  cat repositories.json
+  215  docker images
+  216  ls
+  217  cd ..
+  218  ls
+  219  cd ..
+  220  ls
+  221  cd volumes
+  222  ls
+  223  cd tmp
+  224  cd ..
+  225  ls
+  226  cd mp
+  227  cd tmp
+  228  ls
+  229  cd ..
+  230  clear
+  231  cd /home/
+  232  ls
+  233  cd /root/
+  234  ls
+  235  mkdir app
+  236  ls
+  237  cd app/
+  238  ls
+  239  touch hostfile
+  240  ls
+  241  docker ps -a
+  242  docker run -dit --name c3  -v /home/app:/data -h
+  243  pwd
+  244  docker run -dit --name c3  -v /root/app:/data centos:7
+  245  docker ps
+  246  docker attach c3
+  247  docker ps
+  248  docker ps -a
+  249  docker sar c3
+  250  docker start c3
+  251  docker ps -a
+  252  ls
+  253  cat hostfile
+  254  docker stop c3
+  255  docker ps
+  256  ls
+  257  cat hostfile
+  258  clear
+  259  docker run -dit -P --name ramanweb -v /root/app:/var/tmp/www/index.html
+  260  docker run -dit -P --name ramanweb -v /root/app:/var/tmp/www/index.html httpd
+  261  docker ps
+  262  ls
+  263  docker run -dit -P --name ramanweb2 -v /root/app:/var/tmp/www/ httpd
+  264  docker ps
+  265  ls
+  266  rm -rf hostfile
+  267  vi index.html
+  268  docker ps
+  269  docker attach ramanweb2
+  270  docker ps
+  271  docker start ramanweb2
+  272  docker exec -it ramanweb2 /bin/bash
+  273  docker ps
+  274  touch index2
+  275  docker exec -it ramanweb2 /bin/bash
+  276  clear
+  277  docker ps -a
+  278  docker logs ramanweb2
+  279  docker logs -f c3
+  280  docker logs -f c1
+  281  docker stats
+  282  docker top  ramanweb2
+  283  docker top  c2
+  284  docker top  c1
+  285  clear
+  286  docker system df
+  287  docker system prune
+  288  docker system df
+  289  docker system prune -a
+  290  docker system df
+
+```
 
