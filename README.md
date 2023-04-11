@@ -140,5 +140,74 @@ docker run -dit --name c1 ubuntu
   130  curl 172.31.23.145
   131  curl 172.31.23.145:81
 
+```
 
 ```
+
+Docker network and port mapping :
+
+ docker rm -f `docker ps -aq`
+  119  clear
+  120  docker run -dit --name httpd httpd
+  121  docker ps
+  122  docker inspect httpd
+  123  curl 172.17.0.2
+  124  curl 172.17.0.2:80
+  125  curl 172.31.23.145
+  126  docker ps
+  127  docker run -dit --name c2 -p 81:80 httpd
+  128  docker ps
+  129  docker inspect c2
+  130  curl 172.31.23.145
+  131  curl 172.31.23.145:81
+  132  history
+  133  docker ps
+  134  docker images
+  135  clear
+  136  ip -a
+  137  ip a
+  138  clear
+  139  docker run -dit --name webserver --network=host httpd
+  140  docker ps
+  141  docker run -dit --name webserver2 --network=host nginx
+  142  docker ps
+  143  docker ps -a
+  144  docker logs webserver2
+  145  clear
+  146  docker ps
+  147  docker exec -it webserver /bin/bash
+  148  clear
+  149  ls
+  150  curl 172.31.23.145:80
+  151  docker network ls
+  152  docker network create --help
+  153  docker network create --subnet 10.0.0.0/20 -d bridge raman-net
+  154  docker network ls
+  155  docker inspect raman-net
+  156  docker ps
+  157  docker ps -a
+  158  docker rm -f `docker ps -aq`
+  159  clear
+  160  docker network ls
+  161  docker run -dit  --name c1 --hostname webserver  --network raman-net nginx
+  162  docker ps
+  163  docker inspect c1
+  164  clear
+  165  docker ps
+  166  docker run -dit -p 8081:80 --name c2 httpd
+  167  docker ps
+  168  docker rm -f c1
+  169  docker ps
+  170  docker run -P --name c2 nginx
+  171  docker ps -a
+  172  docker run -dit -P --name c2 nginx
+  173  docker ps
+  174  docker run -dit -P --name c1 nginx
+  175  docker ps
+  176  clear
+  177  docker ps
+  178  docker exec -it c2 /bin/bash
+
+```
+
+
