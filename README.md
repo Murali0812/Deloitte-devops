@@ -480,4 +480,39 @@ cd app2
 
 ```
 
+```
+3. Dockerfile 
 
+root@docker:~/app/app3# cat Dockerfile
+FROM centos:7
+RUN yum update -y
+RUN yum install -y httpd
+COPY ./index.html /var/www/html/index.html
+EXPOSE 80
+WORKDIR /var/www/html
+CMD ["httpd","-D","FOREGROUND"]
+
+
+
+ mkdir app3
+  405  ls
+  406  cd app3
+  407  ls
+  408  vi Dockerfile
+  409  ls
+  410  cat Dockerfile
+  411  ls
+  412  docker build -t custom3 .
+  413  docker ps
+  414  docker images
+  415  docker run -dit -P --name c3 custom3
+  416  docker ps
+  417  ls
+  418  cat index.html
+  419  vi index.html
+  420  docker build -t custom4 .
+  421  docker images
+  422  docker run -dit -P --name c4 custom4
+  423  docker ps
+
+```
