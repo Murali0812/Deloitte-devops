@@ -400,3 +400,35 @@ docker images
   331  docker events
 
 ```
+
+```
+1. Dockerfile
+
+root@docker:~/app/app1# cat Dockerfile
+FROM centos:7
+RUN yum update -y
+RUN yum -y install httpd
+
+
+mkdir app1
+  348  ls
+  349  cd app1/
+  350  vi Dockerfile
+  351  cat Dockerfile
+  352  docker images
+  353  docker ps
+  354  ls
+  355  docker build -t custom1 .
+  356  ls
+  357  docker images
+  358  docker image history custom1
+  359  docker ps -a
+  360  docker run -dit --name c1 custom1
+  361  docker ps
+  362  clear
+  363  ls
+  364  docker image
+  365  docker images
+
+
+```
