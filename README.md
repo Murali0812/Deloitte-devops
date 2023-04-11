@@ -494,6 +494,16 @@ CMD ["httpd","-D","FOREGROUND"]
 
 
 
+
+
+root@docker:~/app/app3# cat index.html
+ Raman from Deloitte
+
+
+
+
+
+
  mkdir app3
   405  ls
   406  cd app3
