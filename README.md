@@ -562,3 +562,19 @@ docker images
   465  docker images
 
 ```
+```
+
+KUBERNETES :
+
+
+kubernetes cluster using kubeadm tool : Ubuntu 20.04 LTS - Focal , t2.medium , 20 gb storage , sg (all traffic)
+1 master node 
+2 worker nodes 
+
+
+login into all three using terminal
+
+hostnamectl set-hostname master
+bash
+
+```
