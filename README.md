@@ -959,3 +959,46 @@ terraform show
   220  terraform apply -auto-approve
 
 ```
+
+```
+Alias :
+
+
+[root@ip-172-31-94-181 terraform]# cat ec2.tf
+provider "aws" {
+  region = "us-east-1"
+}
+
+
+resource "aws_instance" "ec2" {
+  ami           = "ami-06e46074ae430fba6"
+  instance_type = "t2.micro"
+  availability_zone= "us-east-1a"
+  tags = {
+    Name = "Raman-server"
+  }
+}
+
+
+
+
+
+[root@ip-172-31-94-181 terraform]# cat ec2new.tf
+provider "aws" {
+  region = "us-east-2"
+ alias= "us2"
+}
+
+
+resource "aws_instance" "ec22" {
+  ami           = "ami-0103f211a154d64a6"
+  provider=aws.us2
+  instance_type = "t2.micro"
+  availability_zone= "us-east-2a"
+  tags = {
+    Name = "Raman-server"
+  }
+}
+
+
+```
