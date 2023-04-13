@@ -653,4 +653,102 @@ resource "aws_instance" "ec2" {
 
 ```
 
+```
 
+WOrking with other providers :
+
+
+
+provider "github" {
+  token = "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"
+}
+
+resource "github_repository" "example" {
+  name        = "raman-repo"
+  description = "My awesome codebase"
+
+  visibility = "public"
+
+}
+
+
+
+
+
+
+
+
+terraform init
+terraform validate
+terraform plan   >> refresh
+terraform apply  >> refresh / terraform apply
+terraform destroy
+
+
+desired state : .tf    : t2.micro
+terraform.tfstate : last known good configuration : t2.micro >> t2.nano
+actual state : t2.micro >> t2.nano
+
+
+remote backend : s3 : terraform.state ( 20 people )
+
+
+terraform state lock dynamo db
+
+
+
+
+
+
+
+history :
+
+cat ec2.tf
+  106  history
+  107  clear
+  108  ls
+  109  vi git.tf
+  110  ls
+  111  terraform validate
+  112  vi git.tf
+  113  terraform validate
+  114  terraform init
+  115  ls -a
+  116  cd .terraform
+  117  ls
+  118  cd providers/
+  119  ls
+  120  cd registry.terraform.io/
+  121  ls
+  122  cd hashicorp/
+  123  ls
+  124  cd /root/
+  125  cd terraform/
+  126  ls
+  127  terraform plan
+  128  vi git.tf
+  129  terraform plan
+  130  terraform apply
+  131  terraform destroy
+  132  clear
+  133  ls
+  134  vi az.tf
+  135  ls
+  136  terraform show
+  137  ls
+  138  mv git.tf git
+  139  ls
+  140  cat terraform.tfstate
+  141  terraform apply
+  142  cat terraform.tfstate
+  143  clear
+  144  cat ec2.tf
+  145  cat terraform.tfstate | grep type
+  146  terraform refresh
+  147  cat terraform.tfstate | grep type
+  148  cat ec2.tf
+  149  teraaform apply -auto-approve
+  150  terraform apply -auto-approve
+
+
+```
