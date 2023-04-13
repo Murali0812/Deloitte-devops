@@ -578,3 +578,27 @@ hostnamectl set-hostname master
 bash
 
 ```
+
+
+```
+TERRAFORM :
+
+
+Installed terraform on centos7
+
+We installed aws cli :
+
+aws configure
+   61  yum install -y unzip
+   62  yum install -y wget
+   63  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   64  unzip awscliv2.zip
+   65  sudo ./aws/install
+   66  ln -s  /usr/local/bin/aws  /usr/bin/
+   67  aws --version
+
+
+---
+
+
+
