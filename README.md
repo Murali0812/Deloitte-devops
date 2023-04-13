@@ -835,4 +835,127 @@ terraform destroy -target aws_instance.ec2
 
 ```
 
+```
 
+VARIABLES CONCEPT :
+
+
+
+[root@ip-172-31-94-181 terraform]# cat ec2.tf
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "ec2" {
+  ami           = "ami-06e46074ae430fba6"
+  instance_type = var.rk
+  availability_zone= "us-east-1a"
+  vpc_security_group_ids= [aws_security_group.raman-sg.id]
+  tags = {
+    Name = "Raman-server"
+  }
+}
+
+resource "aws_security_group" "raman-sg" {
+  name        = "raman-tfsg"
+  description = "Allow TLS inbound traffic"
+  vpc_id      = "vpc-0c06b56c732f0511a"
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 443
+    to_port          = 443
+    protocol         = "tcp"
+    cidr_blocks      = [var.cidr]
+  }
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = [var.cidr]
+  }
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = [var.cidr]
+  }
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 3389
+    to_port          = 3389
+    protocol         = "tcp"
+    cidr_blocks      = [var.cidr]
+  }
+
+ ingress {
+    description      = "TLS from VPC"
+    from_port        = 8081
+    to_port          = 8081
+    protocol         = "tcp"
+    cidr_blocks      = [var.cidr]
+  }
+
+
+
+  tags = {
+    Name = "allow_tls"
+  }
+}
+
+
+
+
+
+
+
+
+
+[root@ip-172-31-94-181 terraform]# cat variable.tf
+variable "cidr" {
+  default= "116.50.30.70/32"
+}
+
+variable "rk" {
+  default= "t2.micro"
+}
+
+
+
+
+
+
+history :
+
+terraform show
+  197  vi ec2.tf
+  198  terraform validate
+  199  terraform plan
+  200  terraform apply -auto-approve
+  201  clear
+  202  cat ec2.tf
+  203  clear
+  204  vi ec2.tf
+  205  vi variable.tf
+  206  cat variable.tf
+  207  vi ec2.tf
+  208  cat variable.tf
+  209  ls
+  210  vi variable.tf
+  211  vi ec2.tf
+  212  clear
+  213  terraform validate
+  214  cat ec2.tf
+  215  terraform plan
+  216  terraform apply -auto-approve
+  217  vi ec2.tf
+  218  vi variable.tf
+  219  terraform validate
+  220  terraform apply -auto-approve
+
+```
