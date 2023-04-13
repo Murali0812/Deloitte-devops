@@ -601,4 +601,56 @@ aws configure
 ---
 
 
+```
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "ec2" {
+  ami           = "ami-06e46074ae430fba6"
+  instance_type = "t2.micro"
+  availability_zone= "us-east-1a"
+  tags = {
+    Name = "Raman-server"
+  }
+}
+
+
+
+
+ mkdir terraform
+   76  cd terraform/
+   77  ls
+   78  vi ec2.tf
+   79  clear
+   80  cat ec2.tf
+   81  ls -a
+   82  terraform plan
+   83  terraform validate
+   84  vi ec2.tf
+   85  terraform validate
+   86  ls -a
+   87  terraform init
+   88  ls -la
+   89  cd .terraform
+   90  ls
+   91  cd providers/
+   92  ls
+   93  cd registry.terraform.io/
+   94  ls
+   95  cd hashicorp/
+   96  ls
+   97  cat ec2.tf
+   98  cd /root/
+   99  cat ec2.tf
+  100  cd terraform/
+  101  cat ec2.tf
+  102  terraform validate
+  103  terraform plan
+  104  terraform apply
+
+
+```
+
 
