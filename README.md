@@ -752,3 +752,87 @@ cat ec2.tf
 
 
 ```
+```
+OUTPUT :
+
+
+
+[root@ip-172-31-94-181 terraform]# cat ec2.tf
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "ec2" {
+  ami           = "ami-06e46074ae430fba6"
+  instance_type = "t2.micro"
+  availability_zone= "us-east-1a"
+  tags = {
+    Name = "Raman-server"
+  }
+}
+
+output "myawsserver-publicip" {
+  value = [aws_instance.ec2.public_ip]
+}
+
+output "myawsserver-type" {
+  value = [aws_instance.ec2.instance_type]
+}
+
+output "my-s3-bucket" {
+  value = [aws_s3_bucket.example.bucket]
+}
+
+output "my-Eip" {
+  value = [aws_eip.lb.public_ipv4_pool]
+}
+
+resource "aws_eip" "lb" {
+ vpc =true
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-buckettttttttttttttttttttttttttttttttttttttttsss"
+
+  tags = {
+    Name        = "My bucket raman"
+    Environment = "Dev"
+  }
+}
+
+
+
+
+
+
+
+terraform destroy -target aws_instance.ec2
+  169  terraform destroy
+  170  clear
+  171  terraform show
+  172  ls
+  173  rm -rf git.tf
+  174  vi ec2.tf
+  175  terraform validate
+  176  vi ec2.tf
+  177  clear
+  178  cat ec2.tf
+  179  terraform validate
+  180  terraform plan
+  181  vi ec2.tf
+  182  terraform plan
+  183  vi ec2.tf
+  184  terraform plan
+  185  terraform apply -auto-approve
+  186  vi ec2.tf
+  187  terraform plan
+  188  vi ec2.tf
+  189  terraform plan
+  190  terraform apply -auto-approve
+  191  terraform destroy
+  192  terraform show
+
+
+```
+
+
