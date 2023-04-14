@@ -1002,3 +1002,38 @@ resource "aws_instance" "ec22" {
 
 
 ```
+```
+
+ANSIBLE :
+
+
+ansible
+
+system of ansible :
+1 ansible server ... Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
+2 nodes ....
+
+
+adhoc-commads
+modules
+playbooks
+
+pipeline :
+
+
+
+1. created the three nodes
+2.installation of ansible on all servers
+
+
+root@node1 ~]# history
+    1  yum update -y
+    2  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    3  yum install epel-release-latest-7.noarch.rpm
+    4  yum update -y
+    5  yum install git python python-devel python-pip openssl ansible -y
+    6  ansible 
+    
+    
+    
+    ```
