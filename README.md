@@ -1188,5 +1188,51 @@ ansible --all -a
 PLAYBOOK :
 
 
+
+ansible@ansible-main ~]$ cat target.yaml 
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes 
+
+
+
+
+
+ansible@ansible-main ~]$ cat target2.yaml 
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+  - name: Installation of httpd on servers
+    action: yum name=httpd state=present
+  - name: Installation of tree 
+    action: yum name=tree state=present 
+
+
+
+
+[ansible@main ~]$ cat variable.yaml
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+    pkgname: httpd
+  tasks:
+  - name: install httpd 
+    action: yum name='{{pkgname}}' state=installed
+
+---
+
+
+
+
+
+
+
+
     ```
 
