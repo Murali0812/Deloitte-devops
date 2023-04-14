@@ -1035,5 +1035,29 @@ root@node1 ~]# history
     6  ansible 
     
     
-    
+    3. vi /etc/ansible/hosts : on main server
+
+
+[demo]
+
+172.31.87.199
+172.31.91.16
+
+vi /etc/ansible//ansible.cfg 
+uncomment the inventory line 
+
+
+4. create user : on each of them
+adduser ansible 
+passwd ansible : raman
+
+
+5. become root again : on all servers
+
+visudo
+
+ansible ALL=(ALL)       NOPASSWD: ALL
+
+
+
     ```
