@@ -1093,4 +1093,34 @@ sudo systemctl restart sshd
 7.
 
 
+
+# we need a keypair to remove password dependency 
+# on main server:
+ssh-keygen
+
+# public-pvt keypairs are generated ..
+
+send the pub key to both nodes 
+
+[ansible@ansible-main .ssh]$ ssh-copy-id ansible@172.31.35.72
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ansible/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+ansible@172.31.35.72's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'ansible@172.31.35.72'"
+and check to make sure that only the key(s
+
+
+do above and send pub key on both nodes from main
+
+
+
+------------------------
+
+infrasructire is ready
+
+
     ```
