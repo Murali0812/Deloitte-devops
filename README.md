@@ -1123,4 +1123,37 @@ do above and send pub key on both nodes from main
 infrasructire is ready
 
 
+
+ADHOC :
+
+
+ansible --all -a
+   33  ansible all -a "ls"
+   34  clear
+   35  ansible all -a "ls"
+   36  ansible all -a "ls -ltr"
+   37  clear
+   38  ansible all -a "touch testtext"
+   39  ansible all -a "rm -rf *"
+   40  ansible all -a "rm -rf testtext"
+   41  ansible all -a "ls -ltr"
+   42  ansible demo -a "ls -ltr"
+   43  ansible demo -a "yum install httpd -y"
+   44* 
+   45  ansible demo -a "yum install httpd -y"
+   46  ansible demo -a "sudo yum install httpd -y"
+   47  ansible all -a " which httpd"
+   48  ansible all -a -b " which httpd"
+   49  ansible all -a\b " which httpd"
+   50  ansible all -ab " which httpd"
+   51  clear
+   52  ansible all -a " sudo which httpd"
+   53  ansible all -a " sudo yum remove httpd"
+   54  ansible all -a " sudo which httpd"
+   55  ansible all -a " sudo mkdir testdir"
+   
+   
+   
+   MODULES :
+   
     ```
