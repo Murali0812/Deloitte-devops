@@ -1058,6 +1058,39 @@ visudo
 
 ansible ALL=(ALL)       NOPASSWD: ALL
 
+6. 
+
+# try entering in ur nodes from main ansible server :
+ull get permisions access error...like below:
+
+[ansible@ansible-main ~]$ ssh 172.31.35.72
+The authenticity of host '172.31.35.72 (172.31.35.72)' can't be established.
+ECDSA key fingerprint is SHA256:Nr0fmk07JULI89py88lTNtpUtg1Vk3ml+Wi0TkTwXfY.
+ECDSA key fingerprint is MD5:a9:2e:7a:2e:2a:e2:eb:fa:2e:c9:50:b6:97:42:9a:f1.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '172.31.35.72' (ECDSA) to the list of known hosts.
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+
+
+from ur main ansible server ,and both nodes
+become root again and go to /etc/ssh/sshd_config
+uncomment permit root login yes 
+
+aand
+
+uncommment password authentication like below :
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication yes
+#PermitEmptyPasswords no
+#PasswordAuthentication no
+
+
+# on all servers to refresh sshd daemon :
+sudo systemctl restart sshd
+
+
+
+7.
 
 
     ```
