@@ -1156,4 +1156,37 @@ ansible --all -a
    
    MODULES :
    
+   
+   
+   clear
+   58  ansible demo[0] -a " sudo rmdir testdir"
+   59  ansible demo[] -a " sudo rmdir testdir"
+   60  clear
+   61  ansible-doc -l
+   62  qqqqq
+   63  clear
+   64  ansible-doc -l | grep -i yum
+   65  ansible demo -b -m yum -a "pkg=httpd state=present"
+   66  ansible demo -b -m yum -a "pkg=httpd state=absent"
+   67  ansible demo -b -m yum -a "pkg=httpd state=present"
+   68  ansible-doc -l | grep -i service
+   69  clear
+   70  ansible-doc -l | grep  service
+   71  ansible demo -b -m service -a "name=httpd state=present"
+   72  ansible demo -b -m service -a "name=httpd state=started"
+   73  ansible demo -b -m service -a "name=httpd state=stopped"
+   74  ansible demo -b -m service -a "name=httpd state=started"
+   75  ansible-doc -l | grep -i user
+   76  ansible demo -b -m user -a "name=raman"
+   77  ansible-doc -l | grep  setup
+   78  clear
+   79  ansible demo -b -m setup
+   80  ansible demo -b -m setup -a "filter=*ipv4*"
+
+
+
+PLAYBOOK :
+
+
     ```
+
